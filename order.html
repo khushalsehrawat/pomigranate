@@ -23,6 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&family=Pacifico&display=swap" rel="stylesheet">
 
 
+
 <script src="order/sr.js"></script>
     
     <style>
@@ -108,6 +109,18 @@ header{
 
     </style>
 </head>
+<!-- code of showing food item when we search -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#input").on("keyup",function(){
+      var value = $(this).val().toLowerCase();
+      $("#main .col-md-4").filter(function(){
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>
 <body>
   <header>
     <div class="container">
@@ -116,7 +129,7 @@ header{
         <div class="container">
           <div class="search-container" ng-controller="mycontroller">
             <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" ng-model="search" ng-repeat="dish in food | filter : search" aria-label="Search" style="width: 40vw;">
+              <input class="form-control mr-sm-2" id="input" type="search" placeholder="Search" ng-model="search" ng-repeat="dish in food | filter : search" aria-label="Search" style="width: 40vw;">
               <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
             </form>
           </div>
@@ -131,18 +144,18 @@ header{
     </div>
   </header>
 <marquee behavior="" direction="" id="mark" >
-  <img src="dosa.webp" alt="" width="10%">
-  <img src="frenchfries.webp" alt="" width="10%">
-  <img src="p1.avif" alt="" width="10%">
-  <img src="pancake.jpeg" alt="" width="10%">
-  <img src="pasta.png" alt="" width="10%">
-  <img src="pastry.jpeg" alt="" width="10%">
+  <img src="order/dosa.webp" alt="" width="10%">
+  <img src="order/frenchfries.webp" alt="" width="10%">
+  <img src="order/p1.avif" alt="" width="10%">
+  <img src="order/pancake.jpeg" alt="" width="10%">
+  <img src="order/pasta.png" alt="" width="10%">
+  <img src="order/pastry.jpeg" alt="" width="10%">
 </marquee>
 
   <div id="main" class="container">
     <div class="row">
     <div class="col-md-4" style="margin-top: 20px; position: relative;">
-      <img class="product-image" src="p1.avif" width="100%" alt="" style="border-radius: 25px;">
+      <img class="product-image" src="order/p1.avif" width="100%" alt="" style="border-radius: 25px;">
       <div class="overlay-text" id="pizza" style="position: absolute; bottom: 10px; left: 10px; font-size: larger; color: white; border-radius: 5px; padding: 2px 5px; background-color: rgba(0, 0, 0, 0.5);">
        <b>60% off</b>
       </div>
@@ -161,7 +174,7 @@ header{
 
     
     <div class="col-md-4" style="margin-top: 20px; position: relative;">
-      <img class="product-image" src="dosa.webp" width="65%" alt="" style="border-radius: 25px; margin-left: 5px;">
+      <img class="product-image" src="order/dosa.webp" width="65%" alt="" style="border-radius: 25px; margin-left: 5px;">
       <div class="overlay-text" style="position: absolute; bottom: 10px; left: 10px; font-size: larger; color: white; border-radius: 5px; padding: 2px 5px; background-color: rgba(0, 0, 0, 0.5);">
         <div class=""><b style="color: rgb(21, 18, 18);">60% off</b></div>
       </div>
@@ -177,7 +190,7 @@ header{
 
     </div>
     <div class="col-md-4" style="margin-top: 20px; position: relative;">
-      <img class="product-image" src="pancake.jpeg" width="100%" alt="" style="border-radius: 25px;">
+      <img class="product-image" src="order/pancake.jpeg" width="100%" alt="" style="border-radius: 25px;">
       <div class="overlay-text" style="position: absolute; bottom: 10px; left: 10px; font-size: larger; color: white; border-radius: 5px; padding: 2px 5px; background-color: rgba(0, 0, 0, 0.5);">
         <div class=""><b>60% off</b></div>
       </div>
@@ -195,7 +208,7 @@ header{
 
     <!-- 2 -->
     <div class="col-md-4" id="left_side" style="margin-top: 20px;">
-      <img class="product-image" src="pastry.jpeg" width="100%" height="50%" alt="" style="border-radius: 25px;">
+      <img class="product-image" src="order/pastry.jpeg" width="100%" height="50%" alt="" style="border-radius: 25px;">
       <div class="overlay-text" style="position: absolute; bottom: 10px; left: 10px; font-size: larger; color: white; border-radius: 5px; padding: 2px 5px; background-color: rgba(16, 16, 16, 0.5);">
        <b>60% off</b>
       </div>
@@ -214,7 +227,7 @@ header{
 
     
     <div class="col-md-4" style="margin-top: 20px;">
-      <img class="product-image" src="frenchfries.webp" width="100%" alt="" style="border-radius: 25px;">
+      <img class="product-image" src="order/frenchfries.webp" width="100%" alt="" style="border-radius: 25px;">
       <div class="overlay-text" style="position: absolute; bottom: 10px; left: 10px; font-size: larger; color: white; border-radius: 5px; padding: 2px 5px; background-color: rgba(0, 0, 0, 0.5);">
         <div class=""><b>60% off</b></div>
       </div>
@@ -230,7 +243,7 @@ header{
 
     </div>
     <div class="col-md-4" style="margin-top: 20px;">
-      <img class="product-image" src="pasta.png" width="100%" height="50%" alt="" style="border-radius: 25px;">
+      <img class="product-image" src="order/pasta.png" width="100%" height="50%" alt="" style="border-radius: 25px;">
       <div class="overlay-text" style="position: absolute; bottom: 10px; left: 10px; font-size: larger; color: white; border-radius: 5px; padding: 2px 5px; background-color: rgba(0, 0, 0, 0.5);">
         <div class=""><b>60% off</b></div>
       </div>
